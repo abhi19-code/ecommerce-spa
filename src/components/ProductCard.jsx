@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
-    <div className="card">
+    <div className="product-card">
       <img
         src={product.thumbnail}
         alt={product.title}
