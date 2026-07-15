@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 function ProductDetails() {
   const { id } = useParams();
+
+  const { addToCart } = useContext(CartContext);
 
   const [product, setProduct] = useState(null);
 
@@ -13,7 +16,7 @@ function ProductDetails() {
         const data = await response.json();
         setProduct(data);
       } catch (error) {
-        console.log(error);
+        console.log("Error:", error);
       }
     }
 
@@ -30,14 +33,12 @@ function ProductDetails() {
 
   return (
     <div className="container product-details">
-
       <img
         src={product.thumbnail}
         alt={product.title}
       />
 
       <div className="details">
-
         <h1>{product.title}</h1>
 
         <p>{product.description}</p>
@@ -52,10 +53,10 @@ function ProductDetails() {
           <strong>Brand:</strong> {product.brand}
         </p>
 
-        <button>Add to Cart</button>
-
+        <button onClick={() => addToCart(product)}>
+          Add to Cart
+        </button>
       </div>
-
     </div>
   );
 }
