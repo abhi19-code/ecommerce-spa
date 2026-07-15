@@ -1,16 +1,53 @@
-# React + Vite
+# React Store SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React Single Page Application (SPA) built using React, Vite, and React Router.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Home Page
+- Shop Page
+- Product Details
+- React Router
+- Dynamic Routing
+- Context API
+- Add to Cart
+- Cart Count
+- Checkout Page
+- Local Storage Persistence
+- Guest Login
+- Protected Checkout Route
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router DOM
+- Context API
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+## API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://dummyjson.com/products
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+## Folder Structure
+
+```
+src/
+ components/
+ context/
+ pages/
+ App.jsx
+ main.jsx
+```
+
+## Author
+
+Abhishek Yadav
