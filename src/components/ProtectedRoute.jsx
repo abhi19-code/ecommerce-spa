@@ -3,11 +3,10 @@ import { Navigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 function ProtectedRoute({ children }) {
-
   const { isLoggedIn } = useContext(CartContext);
 
   if (!isLoggedIn) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
 
   return children;

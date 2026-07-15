@@ -5,13 +5,10 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
-
-    if (savedCart) {
-      return JSON.parse(savedCart);
-    }
-
-    return [];
+    return savedCart ? JSON.parse(savedCart) : [];
   });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function addToCart(product) {
     setCart((prevCart) => [...prevCart, product]);
@@ -26,6 +23,8 @@ export function CartProvider({ children }) {
       value={{
         cart,
         addToCart,
+        isLoggedIn,
+        setIsLoggedIn,
       }}
     >
       {children}

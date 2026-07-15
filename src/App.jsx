@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
 import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import "./App.css";
 
@@ -19,15 +21,18 @@ function App() {
 
         <Route path="/shop" element={<Shop />} />
 
-        <Route
-          path="/product/:id"
-          element={<ProductDetails />}
-        />
+        <Route path="/product/:id" element={<ProductDetails />} />
 
         <Route
           path="/checkout"
-          element={<Checkout />}
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
         />
+
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
